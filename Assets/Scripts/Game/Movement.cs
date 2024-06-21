@@ -20,7 +20,6 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        movements();
         FijarseSuelo();
     }
 
@@ -29,31 +28,28 @@ public class Movement : MonoBehaviour
         _compRigidbody.velocity = new Vector2(direction * speed, _compRigidbody.velocity.y);
     }
 
-    private void movements()
+  
+    public void OnMove(InputAction.CallbackContext context)
     {
-        direction = Input.GetAxis("Horizontal");
-
-        
+        Vector2 movement = context.ReadValue<Vector2>();
+        direction = movement.x; 
     }
 
     public void jump(InputAction.CallbackContext context)
     {
-        { 
-            if (context.performed)
-            { 
-                if (grounded)
-                {
-                    _compRigidbody.velocity = new Vector2(_compRigidbody.velocity.x, jumpforce);
-                }
-                else if (doublejump)
-                {
-                    _compRigidbody.velocity = new Vector2(_compRigidbody.velocity.x, jumpforce);
-                    doublejump = false;
-                }
+        if (context.performed)
+        {
+            if (grounded)
+            {
+                _compRigidbody.velocity = new Vector2(_compRigidbody.velocity.x, jumpforce);
+            }
+            else if (doublejump)
+            {
+                _compRigidbody.velocity = new Vector2(_compRigidbody.velocity.x, jumpforce);
+                doublejump = false;
             }
         }
     }
-
 
     private void FijarseSuelo()
     {
@@ -61,7 +57,7 @@ public class Movement : MonoBehaviour
         if (Physics2D.Raycast(transform.position, Vector2.down, 1f, layermask))
         {
             grounded = true;
-            if (!doublejump) 
+            if (!doublejump)
             {
                 doublejump = true;
             }
@@ -71,4 +67,4 @@ public class Movement : MonoBehaviour
             grounded = false;
         }
     }
-    }
+}
