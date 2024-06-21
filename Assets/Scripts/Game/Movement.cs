@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -32,19 +33,27 @@ public class Movement : MonoBehaviour
     {
         direction = Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (grounded)
-            {
-                _compRigidbody.velocity = new Vector2(_compRigidbody.velocity.x, jumpforce);
-            }
-            else if (doublejump)
-            {
-                _compRigidbody.velocity = new Vector2(_compRigidbody.velocity.x, jumpforce);
-                doublejump = false;
+        
+    }
+
+    public void jump(InputAction.CallbackContext context)
+    {
+        { 
+            if (context.performed)
+            { 
+                if (grounded)
+                {
+                    _compRigidbody.velocity = new Vector2(_compRigidbody.velocity.x, jumpforce);
+                }
+                else if (doublejump)
+                {
+                    _compRigidbody.velocity = new Vector2(_compRigidbody.velocity.x, jumpforce);
+                    doublejump = false;
+                }
             }
         }
     }
+
 
     private void FijarseSuelo()
     {
@@ -52,7 +61,7 @@ public class Movement : MonoBehaviour
         if (Physics2D.Raycast(transform.position, Vector2.down, 1f, layermask))
         {
             grounded = true;
-            if (!doublejump) // Restablecer doublejump solo si ya no se ha utilizado
+            if (!doublejump) 
             {
                 doublejump = true;
             }
