@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class VidaPersonaje : MonoBehaviour
+public class VidaPersonaje : Player
 {
     public int color;
     public int vida = 10;
