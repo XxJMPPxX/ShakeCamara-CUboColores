@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using System;
 
 
 
@@ -17,10 +18,23 @@ public class GameManager : MonoBehaviour
     public Player AddScore;
     public int puntos;
     public int LIFEEE;
-    public UnityEvent OnDiedEscene;
-    
-    
+    //public UnityEvent OnDiedEscene;
+    public static event Action OnDiedEscene;
 
+
+    void OnEnable()
+    {
+
+        VidaPersonaje.OnHeartTouched += AumentarVida;
+        VidaPersonaje.OnTouchDoorWin += GanasteFinal;
+        Player.OnCoinCollected += AddPoints;
+    }
+    void OnDisable()
+    {
+        VidaPersonaje.OnHeartTouched -= AumentarVida;
+        VidaPersonaje.OnTouchDoorWin -= GanasteFinal;
+        Player.OnCoinCollected -= AddPoints;
+    }
 
 
     private void Start()
@@ -74,7 +88,7 @@ public class GameManager : MonoBehaviour
     {
         if (personajevida.vida <= 0)
         {
-            OnDiedEscene.Invoke();
+            OnDiedEscene?.Invoke();
         }
 
     }
@@ -89,5 +103,3 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Gano");
     }
 }
-
-

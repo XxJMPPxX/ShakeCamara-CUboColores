@@ -1,5 +1,4 @@
-
-using Cinemachine;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -9,11 +8,23 @@ public class VidaPersonaje : MonoBehaviour
     public int color;
     public int vida = 10;
     private SpriteRenderer spriteRenderer;
-    public UnityEvent OnHeartTouched;
+    // public UnityEvent OnHeartTouched;
     public bool TocastePuerta;
     public UnityEvent OnTouchDoorNext;
-    public UnityEvent OnTouchDoorWin;
-    public CameraShake cameraShake; 
+    // public UnityEvent OnTouchDoorWin;
+    public CameraShake cameraShake;
+
+    public static event Action OnHeartTouched;
+    public static event Action OnTouchDoorWin;
+    void OnEnable()
+    {
+
+        GameManager.OnDiedEscene += CambioDeEscena;
+    }
+    void OnDisable()
+    {
+        GameManager.OnDiedEscene -= CambioDeEscena;
+    }
 
     void Start()
     {
@@ -71,15 +82,15 @@ public class VidaPersonaje : MonoBehaviour
         }
         else if (collision.CompareTag("Life"))
         {
-            OnHeartTouched.Invoke();
+            OnHeartTouched?.Invoke();
         }
         else if (collision.CompareTag("Marron1"))
         {
-            OnTouchDoorNext.Invoke();
+            OnTouchDoorNext?.Invoke();
         }
         else if (collision.CompareTag("Marron2"))
         {
-            OnTouchDoorWin.Invoke();
+            OnTouchDoorWin?.Invoke();
         }
 
 

@@ -3532,7 +3532,7 @@ Transform:
   m_GameObject: {fileID: 1464336488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0034527779, y: 0.030728936, z: -10}
+  m_LocalPosition: {x: 0.0034537315, y: 0.030728936, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4216,21 +4216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 0
   vida: 10
-  OnHeartTouched:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2086324463}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: AumentarVida
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   TocastePuerta: 0
   OnTouchDoorNext:
     m_PersistentCalls:
@@ -4238,21 +4223,6 @@ MonoBehaviour:
       - m_Target: {fileID: 2086324463}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GanasteCausa
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTouchDoorWin:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2086324463}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GanasTEPORFINNNN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4276,21 +4246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  OnCoinCollected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2086324463}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: AddPoints
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1647729808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5568,21 +5523,6 @@ MonoBehaviour:
   AddScore: {fileID: 1647729807}
   puntos: 1
   LIFEEE: 2
-  OnDiedEscene:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1647729805}
-        m_TargetAssemblyTypeName: VidaPersonaje, Assembly-CSharp
-        m_MethodName: CambioDeEscena
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &2086324464
 Transform:
   m_ObjectHideFlags: 0
