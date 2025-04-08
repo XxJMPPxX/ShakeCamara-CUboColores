@@ -320,7 +320,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1951442531}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GanasTEPORFINNNN
+        m_MethodName: GanasteFinal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2578,7 +2578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 574459410}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PuertaNextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3687,7 +3687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1017549797}
   - component: {fileID: 1017549796}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: marron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
