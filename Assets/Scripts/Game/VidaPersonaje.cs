@@ -81,6 +81,8 @@ public class VidaPersonaje : MonoBehaviour
         {
             OnTouchDoorWin.Invoke();
         }
+
+
     }
 
     public void CambioDeEscena()

@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("game2");
     }
-    public void GanasTEPORFINNNN()
+    public void GanasteFinal()
     {
         SceneManager.LoadScene("Gano");
     }
